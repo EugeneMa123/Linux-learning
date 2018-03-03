@@ -38,3 +38,10 @@ su：认证失败
 yanzhongma@yanzhongma-virtual-machine:~$ su root
 密码： 
 root@yanzhongma-virtual-machine:/home/yanzhongma# 
+
+
+2、普通用户如何进入root模式
+普通用户模式执行 su - root 命令，然后输入root密码即可
+yanzhongma@yanzhongma-virtual-machine:~$ su - root
+密码： 
+root@yanzhongma-virtual-machine:~# dir
