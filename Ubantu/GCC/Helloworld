@@ -1,0 +1,54 @@
+1、系统下安装vim
+root@yanzhongma-virtual-machine:~# vim hello.c
+程序 'vim' 已包含在下列软件包中：
+ * vim
+ * vim-gnome
+ * vim-tiny
+ * vim-athena
+ * vim-athena-py2
+ * vim-gnome-py2
+ * vim-gtk
+ * vim-gtk-py2
+ * vim-gtk3
+ * vim-gtk3-py2
+ * vim-nox
+ * vim-nox-py2
+请尝试：apt install <选定的软件包>
+root@yanzhongma-virtual-machine:~# apt install vim
+
+2、编辑源码
+root@yanzhongma-virtual-machine:~# vim hello.c
+进入vim编辑环境，输入源码
+PS：键入小写字母i进入插入模式，编辑源码 编辑完成后键入esc=》:wq  则保存退出
+3、开始编译并测试执行
+root@yanzhongma-virtual-machine:~# gcc hello.c
+root@yanzhongma-virtual-machine:~# ll hello.c a.out
+-rwxr-xr-x 1 root root 8600 3月   3 18:11 a.out*
+-rw-r--r-- 1 root root   67 3月   3 18:11 hello.c
+root@yanzhongma-virtual-machine:~# ./a.out
+hello world
+
+
+a.out是编译成功的可执行文件
+可以用如下方法老生成目标文件，并且生成一个自命名的执行文件
+root@yanzhongma-virtual-machine:~# gcc -c hello.c
+root@yanzhongma-virtual-machine:~# ll hell*
+-rw-r--r-- 1 root root   67 3月   3 18:11 hello.c
+-rw-r--r-- 1 root root 1504 3月   3 18:12 hello.o
+root@yanzhongma-virtual-machine:~# ./hello.out
+-su: ./hello.out: 没有那个文件或目录
+root@yanzhongma-virtual-machine:~# gcc-o hello hello.o
+未找到 'gcc-o' 命令，您要输入的是否是：
+ 命令 'gcc-6' 来自于包 'gccgo-6' (main)
+ 命令 'gcc-5' 来自于包 'gcc-5' (main)
+ 命令 'gcc-5' 来自于包 'hardening-wrapper' (universe)
+ 命令 'gccgo' 来自于包 'gccgo' (main)
+gcc-o：未找到命令
+root@yanzhongma-virtual-machine:~# gcc -o hello hello.o
+root@yanzhongma-virtual-machine:~# ll hello*
+-rwxr-xr-x 1 root root 8600 3月   3 18:14 hello*
+-rw-r--r-- 1 root root   67 3月   3 18:11 hello.c
+-rw-r--r-- 1 root root 1504 3月   3 18:12 hello.o
+root@yanzhongma-virtual-machine:~# ./hello
+hello world
+root@yanzhongma-virtual-machine:~# 
